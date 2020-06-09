@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+<section class="section-top">
+    <div class="bg-head">
+        <h1 class="text-center py-5">Bienvenue à</h1>
+        <div class="row">
+            <img class="col-6 mx-auto pb-5" src="{{asset('image/logo.png')}}" alt="logo Cyber Park">
+        </div>
+    </div>    
+    <div class="reservation-container py-4 mb-5">
+        <div class="col-8 reservation-module text-center py-4 mx-auto">
+         Hello
+        </div>
+        <p class="mx-auto text-center">"Les dernières techs au service de la nostalgie !</p>
+    </div>
+</section>
+<section class="content container mt-5">
+    <div class="row">
+        <article class="col-12 col-md-6">
+            <h2 class="title-line">{{title}}</h2>
+            <p>Vivre avec nous</p>
+            <p>A <span class="park-title">Cyber Park</span> nous avons pensé à tout le monde, ici <strong>les enfants découvrent l’Univers des parents</strong> au travers des dernières technologies.</p>
+            <p><strong>Espace VR Immersion</strong>, <strong>Drones Racing</strong> ou encore le terrible 
+            <strong>Gerbotron4D</strong> !
+            </p>
+            <p>Conçu pour vivre un <strong>véritable voyage</strong> et une immersion total grâce au <strong>Neuro Helmet</strong>: les achat par la pensées, mais aussi les interactions avec le mobilier, du parc à l’hôtel l’expérience ne s’arrête jamais !</p>
+            <p>Il est dur de réaliser que l’on est au cœur de la Lozère une fois les portes passés.</p>
+            <p>3 Hotels, de nombreux restaurant et services, le plus compliqué, c’est de repartir !</p>
+            <a class="btn btn-primary" href="{{path('Réservation')}}">Réserver</a>
+        </article>
+        <article class="col-12 col-md-6">
+            <p><strong>Notre philosophie</strong></p>
+            <p>La naissance de ce parc d’attraction viens d’un constat simple:
+            </p>
+            <p><strong>Comment financer la recherche en cybernétique ?
+            </strong></p>
+            <p>Grâce à un immense parc d’attraction en étroite collaboration avec les meilleures chercheurs du domaine ! 
+            </p>
+            <p>C’est de leurs innovations que découlent les dernières attractions du parc.</p>
+            <p>Ce partenariat est donnant donnant, vous avez bien lu !</p>
+            <p>En profitant de <strong>Cyber Park</strong> vous faites <strong>avancer la recherche.</strong></p>
+            <p>Chaque visiteur génère une <strong>quantité de données phénoménales</strong>, c’est une <strong>ressource précieuse</strong>. Votre manière de jouer, vos stratégies, vos victoires et encore plus vos défaites nous <strong>intéressent grandement</strong>.</p>
+            <p>Grâce à nos <strong>casques neuronaux</strong> distribué à l’arrivée au parc nous collectons vos décisions, vos émotions, vos données physique, vos déplacements, seulement en jeu ?</p>
+            <p>Bien sur que non, vous participais à la recherche nuit et jours !
+            C’est ça, la philosophie <span class="park-title">Cyber Park</span> !
+            </p>
+        </article>
+    </div>
+</section>
+<section class="opinion container my-5">
+    <h2 class="title-line">Se que l'on dit de nous</h2>
+    <strong>Plus qu'une E-réputation</strong>
+    <p class="col-8">Le parc s’articule autour de trois grands pôles, pour vous divertir et vous servir. 
+    Chaque billet donne accès à l’intégralité du parc. Pensez aux formules Park &amp; Hotels !</p>
+    <div class="row justify-content-around pt-5">
+        <div class="col-3 text-center mt-5">
+            <div>
+                <img class="visitor-thumbnail" src="{{asset('image/rond-g.png')}}" alt="visitor thumbnail">
+            </div>
+            <p class="title-line text-center visitor-name my-3">Jhon Doe</p>
+            <div class="row">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/empty-star.png')}}" alt="star notation">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magni aspernatur facere labore maiores, quos praesentium repellat recusandae voluptatem voluptas nesciunt?</p>
+        </div>
+
+        <div class="col-3 text-center">
+            <div>
+                <img class="visitor-thumbnail" src="{{asset('image/rond-m.png')}}" alt="visitor thumbnail">
+            </div>
+            <p class="title-line text-center visitor-name my-3">Hectorin Davan</p>
+            <div class="row">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/empty-star.png')}}" alt="star notation">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magni aspernatur facere labore maiores, quos praesentium repellat recusandae voluptatem voluptas nesciunt?</p>
+        </div>
+
+        <div class="col-3 text-center mt-5">
+            <div>
+                <img class="visitor-thumbnail" src="{{asset('image/rond-d.png')}}" alt="visitor thumbnail">
+            </div>
+            <p class="title-line text-center visitor-name my-3">Jhon Doe</p>
+            <div class="row">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/full-star.png')}}" alt="star notation">
+                <img class="col-2" src="{{asset('image/empty-star.png')}}" alt="star notation">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magni aspernatur facere labore maiores, quos praesentium repellat recusandae voluptatem voluptas nesciunt?</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

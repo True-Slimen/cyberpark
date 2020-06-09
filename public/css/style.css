@@ -1,0 +1,83 @@
+/* Nav */
+
+/* Footer */
+footer{
+    background-image: url('/image/bg-footer.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 90px;
+    padding: 250px 0 0px 0;
+}
+
+footer img{
+    width: 100%;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer ul a{
+    color: white;
+}
+
+footer ul a :hover{
+    color: white;
+    text-decoration: underline rgb(255, 255, 255);;
+}
+
+footer p{
+    color: white;
+}
+
+/* Accueil */
+
+h1{
+    color: white;
+}
+
+.title-line{
+    text-decoration: underline rgb(255, 0, 140);
+}
+
+.park-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section-top{
+    padding: 0;
+}
+
+.bg-head{
+    background: linear-gradient(black, #3911e7);
+    padding: 0;
+}
+
+.reservation-container{
+    background-image: url('/image/bg-head.png');
+    background-position: center;
+    background-repeat: repeat-x;
+    padding: 0;
+}
+
+.reservation-container p{
+    margin: 120px 0 120px 0;
+    font-size: 24px;
+    color: white;
+}
+
+.reservation-module{
+    background-color: white;
+    border-radius: 50px;
+}
+
+.visitor-thumbnail {
+width: 100%;
+}
+
+.visitor-name{
+    font-size: 22px;
+    font-weight: bold;
+}
