@@ -1,5 +1,11 @@
 /* Nav */
 
+nav a{
+    font-size: 20px;
+    color: black;
+}
+
+
 /* Footer */
 footer{
     background-image: url('/image/bg-footer.png');
@@ -29,6 +35,12 @@ footer ul a :hover{
 
 footer p{
     color: white;
+}
+
+/* Général */
+
+body{
+    margin-top: 71px!important;
 }
 
 /* Accueil */

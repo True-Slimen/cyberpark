@@ -1,25 +1,25 @@
 {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{path('Accueil')}}">LOGO</a>
+    <nav style="" class="navbar shadow fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="col-1 navbar-brand" href="{{path('Accueil')}}"><img class="col-12 mx-auto" src="{{asset('image/logo.png')}}" alt="logo Cyber Park"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav col-8 mx-auto">
-                    <div class="row col-12 justify-content-around">
+                    <div class="row col-12 justify-content-left">
                     
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{path('Accueil')}}">Accueil</a>
+                        <li class="col-3 nav-item active">
+                            <a class="col-5 nav-link" href="{{path('Accueil')}}">Accueil</a>
                         </li>
-                        <li class="nav-item">
-                             <a class="nav-link" href="{{path('Le Park')}}">Le Park</a>
+                        <li class="col-3 nav-item active">
+                             <a class="col-5 nav-link" href="{{path('Le Park')}}">Le Park</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{path('Réservation')}}">Réservation</a>
+                        <li class="col-3 nav-item active">
+                            <a class="col-5 nav-link" href="{{path('Réservation')}}">Réservation</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{path('Contact')}}">Contact</a>
+                        <li class="col-3 nav-item active">
+                            <a class="col-5 nav-link" href="{{path('Contact')}}">Contact</a>
                         </li>
                     
                     </div>

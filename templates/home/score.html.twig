@@ -1,0 +1,26 @@
+{% block body %}
+    {% for score in scores %}
+            <div class="col-3 text-center mt-3">
+            <div>
+                <img class="visitor-thumbnail" src="{{score.coverImage}}" alt="visitor thumbnail">
+            </div>
+            <p class="title-line text-center visitor-name mt-3">{{score.visitorName}}</p>
+            <div class="row justify-content-center">
+            {% if score.score >= 1 %}
+                {% for i in 0.. score.score - 1 %}
+                    <img class="col-2 mb-3" src="{{asset('image/full-star.png')}}" alt="star notation">
+                {% endfor %}
+            {% endif %}
+            {% if 5 - score.score == 0 %}
+            {% else %}
+            {% for i in 0 .. 5 - score.score -1 %}
+                <img class="col-2 mb-3" src="{{asset('image/empty-star.png')}}" alt="star notation">
+            {% endfor %}
+            {% endif %}    
+               
+            </div>
+            <p>{{score.comment}}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}

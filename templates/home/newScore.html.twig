@@ -1,0 +1,14 @@
+{% block body %}
+
+<section class="container">
+    <p>Nouvel avis</p>
+
+    {{ form_start(form)}}
+
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Poster la nouvelle annonce</button>
+
+    {{ form_end(form)}}
+</section>
+{% endblock %}
