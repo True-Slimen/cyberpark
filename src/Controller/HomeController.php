@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
+use App\Form\CommentType;
 use App\Form\NewScoreType;
 use App\Entity\ScoreVisitor;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,17 +20,28 @@ class HomeController extends AbstractController
      * 
      * @return Response
      */
-    public function index()
+    public function index(Request $request, EntityManagerInterface $manager)
     {
-        $repo = $this->getDoctrine()->getRepository(ScoreVisitor::class);
-        $scores = $repo->findAll();
+        // $user = $this->getUser();
+        // var_dump($user);
 
-        $newScore = new ScoreVisitor();
-        $form = $this->createForm(NewScoreType::class, $newScore);
+        $repo = $this->getDoctrine()->getRepository(Comment::class);
+        $comments = $repo->findBy(array(), array('id' => 'desc'),3,0)
+        ;
+        
+        
+        $newComment = new Comment();
+        $form = $this->createForm(CommentType::class, $newComment);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($newComment);
+            $manager->flush();
+        }
         
         return $this->render('home/home.html.twig', [
             'title' => 'Accueil',
-            'scores' => $scores,
+            'comments' => $comments,
             'form' => $form->createView()
         ]);
     }
@@ -34,16 +49,24 @@ class HomeController extends AbstractController
     /**
      * Permet de creer un avis
      * 
-     * @Route("/newscore", name ="newscore")
+     * @Route("/newcomment", name ="newscomment")
      *
      * @return Response
      */
-    public function createScore() {
+    public function createComment(Request $request, EntityManagerInterface $manager) {
+        $user = $this->getUser();
+        $newComment = new Comment();
+        $form = $this->createForm(CommentType::class, $newComment);
+        
+        $form->handleRequest($request);
 
-       
-        $newScore = new ScoreVisitor();
-        $form = $this->createForm(NewScoreType::class, $newScore);
-        return $this->render('home/newScore.html.twig', [
+        if($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($newComment);
+            $manager->flush();
+        }
+
+        return $this->render('home/newComment.html.twig', 
+        [
             'form' => $form->createView()
         ]);
     }

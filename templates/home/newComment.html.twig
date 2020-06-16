@@ -1,0 +1,32 @@
+{% block body %}
+
+
+    <section class="container my-4">
+        <h2 class="title-line">Nouvel avis</h2>
+        {% if app.user %}
+
+            <div class="col-6 mr-auto">
+                {{ form_start(form)}}
+
+                {{ form_widget(form) }}
+
+                <button type="submit" class="btn btn-primary">Poster</button>
+
+                {{ form_end(form)}}
+            </div>
+        {% else %}
+            <p>Vous devez être connecté pour laisser un avis.</p>
+            <div class="row">
+                <div class="col-6">
+                    <a class="nav-link mx-auto btn-primary text-center col-6" href="{{path('account_login')}}">Connexion</a>
+                </div>
+                <div class="col-6">
+                    <a class="nav-link mx-auto btn-primary text-center col-6" href="{{path('account_register')}}">S'inscrire</a>
+                </div>
+                
+            </div>
+        {% endif %}
+    </section>
+
+{% endblock %}
+

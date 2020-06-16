@@ -1,8 +1,12 @@
 /* Nav */
 
 nav a{
-    font-size: 20px;
+    font-size: 1rem;
     color: black;
+}
+
+.logo{
+    max-width: 170px;
 }
 
 
@@ -37,7 +41,7 @@ footer p{
     color: white;
 }
 
-/* Général */
+/* Général - base */
 
 body{
     margin-top: 71px!important;
@@ -92,4 +96,32 @@ width: 100%;
 .visitor-name{
     font-size: 22px;
     font-weight: bold;
+}
+
+.comment-area{
+    min-height: 250px;
+}
+
+.star{
+    max-width: 50px;
+}
+
+/* Login */
+
+.info-container{
+    margin-top: 71px!important;
+    height: 110px!important;
+}
+
+.info-container, .alert-success{
+    margin-top: 80px;
+    font-size: 16px;
+}
+
+.error-container{
+    height: 50px;
+}
+
+.top-container{
+    margin-top: 200px;
 }
