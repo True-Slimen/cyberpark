@@ -2,17 +2,23 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block body %}
-<div class="info-container row">
+    <div class="info-container row">
         {% for message in app.flashes('success') %}
-        
             <div style="" class="col-3 mx-auto alert alert-success">
                     {{ message }}
             </div>
-        
         {% endfor %}
     </div>
     <div class="container">
         <h2 class="title-line mt-5 mb-3">Modification du profil</h2>
+
+        {% if user is same as (app.user) %}
+            <div>
+                <p>Vous êtes {{user.firstName}} {{user.lastName}}</p>  
+            </div>
+        {% endif %}
+
+        
 
         <div>
            {{ form_start(form) }} 

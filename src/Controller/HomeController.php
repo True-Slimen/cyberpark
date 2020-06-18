@@ -22,52 +22,34 @@ class HomeController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $manager)
     {
-        // $user = $this->getUser();
-        // var_dump($user);
+       
 
         $repo = $this->getDoctrine()->getRepository(Comment::class);
         $comments = $repo->findBy(array(), array('id' => 'desc'),3,0)
         ;
-        
         
         $newComment = new Comment();
         $form = $this->createForm(CommentType::class, $newComment);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            $newComment->setAuthor($this->getUser());
             $manager->persist($newComment);
             $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "L'avis a bien était créé, rachraichissais la page pour le voir."
+            );
         }
         
         return $this->render('home/home.html.twig', [
+           
             'title' => 'Accueil',
             'comments' => $comments,
             'form' => $form->createView()
         ]);
     }
 
-    /**
-     * Permet de creer un avis
-     * 
-     * @Route("/newcomment", name ="newscomment")
-     *
-     * @return Response
-     */
-    public function createComment(Request $request, EntityManagerInterface $manager) {
-        $user = $this->getUser();
-        $newComment = new Comment();
-        $form = $this->createForm(CommentType::class, $newComment);
-        
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()) {
-            $manager->persist($newComment);
-            $manager->flush();
-        }
-
-        return $this->render('home/newComment.html.twig', 
-        [
-            'form' => $form->createView()
-        ]);
-    }
+  
 }

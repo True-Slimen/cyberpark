@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
                  ->setEmail('dettinger@mail.com')
                  ->setPicture("/image/rond-g.png")
                  ->setHash($hash)
-                 ->setIntroduction('Joyeux luron');
+                 ->setIntroduction('Journaliste pour "Leur Monde", je parcours la terre pour dénicher les meilleures vacances du moment !');
                  
                  
                 $manager->persist($user);
@@ -49,13 +49,13 @@ class AppFixtures extends Fixture
 
 
             $user2 = new User();
-            $hash2 = $this->encoder->encodePassword($user2, 'mountain');
+            $hash2 = $this->encoder->encodePassword($user2, 'password');
             $user2->setFirstName('Hectorin')
                      ->setLastName('Davant')
                      ->setEmail('davant@mail.com')
                      ->setPicture("/image/rond-m.png")
                      ->setHash($hash2)
-                     ->setIntroduction('Joyeux blaireau');
+                     ->setIntroduction('Reporter pour "BNM Intox", je reste impartial sur chaque enquête !');
                      
                      
                     $manager->persist($user2);
@@ -77,7 +77,7 @@ class AppFixtures extends Fixture
                          ->setEmail('laha@mail.com')
                          ->setPicture("/image/rond-d.png")
                          ->setHash($hash3)
-                         ->setIntroduction('Joyeuse passive/agréssive');
+                         ->setIntroduction('Enquêtrice de talent, je suis au top de l\'Objectivité pour donner mon avis sur à peu près tout et n\'importe quoi.');
                          
                          
                         $manager->persist($user3);

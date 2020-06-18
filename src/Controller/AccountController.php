@@ -7,6 +7,7 @@ use App\Form\AccountType;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping\Id;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -87,6 +88,7 @@ class AccountController extends AbstractController
      */
     public function profile(Request $request, EntityManagerInterface $manager){
         $user = $this->getUser();
+       
         $form = $this->createForm(AccountType::class, $user);
 
         $form->handleRequest($request);
@@ -101,11 +103,31 @@ class AccountController extends AbstractController
             );
         }
         
-        return $this->render('account/profile.html.twig', [
+        return $this->render('account/profil.html.twig', [
             'title' => 'Editer le profile',
+            'user' => $this->getUser(),
             'form' => $form->createView()
         ]);
     }
 
+    /**
+     * Permet d'afficher le profil de l'utilisateur connecté
+     * 
+     * @Route("/account", name="account_index")
+     *
+     * @return Response
+     */
+    public function mayAccount(){
+        
+        $repo = $this->getDoctrine()->getRepository(User::class);
+        $users = $repo->findAll()
+        ;
+
+        return $this->render('user/index.html.twig', [
+            'users' => $users,
+            'title' => 'Votre profil',
+            'user' => $this->getUser()
+        ]);
+    }
    
 }

@@ -38,6 +38,7 @@ class Comment
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
+    
 
     /**
      * Créer la date de création

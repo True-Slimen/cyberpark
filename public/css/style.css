@@ -9,6 +9,25 @@ nav a{
     max-width: 170px;
 }
 
+.avatar-hidden{
+    width: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 36px;
+}
+
+.avatar-mini{
+    width: 36px;
+    
+}
+
+nav p{
+    margin: 10px 0;
+}
+
+nav li {
+    list-style: none;
+}
 
 /* Footer */
 footer{

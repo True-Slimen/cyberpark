@@ -55,13 +55,20 @@
     <strong>Plus qu'une E-réputation</strong>
     <p class="col-8">Le parc s’articule autour de trois grands pôles, pour vous divertir et vous servir. 
     Chaque billet donne accès à l’intégralité du parc. Pensez aux formules Park &amp; Hotels !</p>
-    <div class="row justify-content-around ">
+    <div id="comment-ancre"  class="row justify-content-around ">
         
              {% include "home/score.html.twig" %}
              
     </div>
     </div>
     <div class="card comment-area mt-4 p-3 bg-light shadow">
+        <div class="info row">
+            {% for message in app.flashes('success') %}
+                <div style="" class="col-3 mx-auto alert alert-success">
+                        {{ message }}
+                </div>
+            {% endfor %}
+        </div>
         <div class="container">
             {% include "home/newComment.html.twig" %}
         </div>
